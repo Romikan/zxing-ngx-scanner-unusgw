@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BarcodeFormat } from '@zxing/library';
 import { BehaviorSubject } from 'rxjs';
@@ -10,7 +10,7 @@ import { AppInfoDialogComponent } from './app-info-dialog/app-info-dialog.compon
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   // availableDevices: MediaDeviceInfo[];
   // currentDevice: MediaDeviceInfo = null;
@@ -24,6 +24,9 @@ export class AppComponent {
 
   // hasDevices: boolean;
   // hasPermission: boolean;
+  scannerEnabled: boolean;
+  result: boolean;
+  
 
   qrResultString: string;
 
@@ -33,7 +36,21 @@ export class AppComponent {
 
 
 // private readonly _dialog: MatDialog
-  constructor() { }
+  constructor() {
+    this.scannerEnabled = false;
+    this.result = false;
+   }
+
+  //  OnInit(){
+ 
+  //  }
+  //  onScan(){
+  //     this.scannerEnabled = true;
+  //   }
+  //   offScan(){
+  //     this.scannerEnabled = false;
+  //   }
+
 
   // clearResult(): void {
   //   this.qrResultString = null;
@@ -44,9 +61,12 @@ export class AppComponent {
   //   this.hasDevices = Boolean(devices && devices.length);
   // }
 
-  onCodeResult(resultString: string) {
-    this.qrResultString = resultString;
-  }
+  // onCodeResult(resultString: string) {
+  //   this.qrResultString = resultString;
+  //   if(this.result == true){
+  //   this.scannerEnabled = false;
+  //   }
+  // }
 
   // onDeviceSelectChange(selected: string) {
   //   const device = this.availableDevices.find(x => x.deviceId === selected);

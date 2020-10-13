@@ -1,6 +1,6 @@
 zxing-scanner {
-  max-width: 70%;
-  max-height: 70%;
+  width: 70%;
+  height: auto;
   border:1px solid black;
   margin: auto;
   margin-top: 20%;
@@ -81,4 +81,9 @@ header {
 h2,h3 {
   padding: 0 16px;
   color:black
+}
+.scanbutton{
+  margin-top: 5%;
+  margin-left: 45%;
+  margin-right: auto;
 }
