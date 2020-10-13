@@ -17,8 +17,6 @@ export class AppComponent {
 
   formatsEnabled: BarcodeFormat[] = [
     BarcodeFormat.CODE_128,
-    BarcodeFormat.DATA_MATRIX,
-    BarcodeFormat.EAN_13,
     BarcodeFormat.QR_CODE,
     BarcodeFormat.CODE_39,
     BarcodeFormat.ITF
@@ -37,9 +35,9 @@ export class AppComponent {
 // private readonly _dialog: MatDialog
   constructor() { }
 
-  clearResult(): void {
-    this.qrResultString = null;
-  }
+  // clearResult(): void {
+  //   this.qrResultString = null;
+  // }
 
   // onCamerasFound(devices: MediaDeviceInfo[]): void {
   //   this.availableDevices = devices;
