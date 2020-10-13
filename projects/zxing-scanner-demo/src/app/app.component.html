@@ -29,13 +29,13 @@
       <mat-icon>more_vert</mat-icon>
     </button>
   </header> -->
-
+<!-- [(device)]="currentDevice" 
+  (permissionResponse)="onHasPermission($event)"
+  (camerasFound)="onCamerasFound($event)"  -->
 
   <zxing-scanner 
   
-  [(device)]="currentDevice" 
-  (permissionResponse)="onHasPermission($event)"
-  (camerasFound)="onCamerasFound($event)" 
+  
   [formats]="formatsEnabled" 
   (scanSuccess)="onCodeResult($event)"
 

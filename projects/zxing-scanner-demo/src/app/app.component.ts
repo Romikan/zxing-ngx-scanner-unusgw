@@ -12,8 +12,8 @@ import { AppInfoDialogComponent } from './app-info-dialog/app-info-dialog.compon
 })
 export class AppComponent {
 
-  availableDevices: MediaDeviceInfo[];
-  currentDevice: MediaDeviceInfo = null;
+  // availableDevices: MediaDeviceInfo[];
+  // currentDevice: MediaDeviceInfo = null;
 
   formatsEnabled: BarcodeFormat[] = [
     BarcodeFormat.CODE_128,
@@ -24,8 +24,8 @@ export class AppComponent {
     BarcodeFormat.ITF
   ];
 
-  hasDevices: boolean;
-  hasPermission: boolean;
+  // hasDevices: boolean;
+  // hasPermission: boolean;
 
   qrResultString: string;
 
@@ -33,25 +33,27 @@ export class AppComponent {
   // torchAvailable$ = new BehaviorSubject<boolean>(false);
   // tryHarder = false;
 
-  constructor(private readonly _dialog: MatDialog) { }
+
+// private readonly _dialog: MatDialog
+  constructor() { }
 
   clearResult(): void {
     this.qrResultString = null;
   }
 
-  onCamerasFound(devices: MediaDeviceInfo[]): void {
-    this.availableDevices = devices;
-    this.hasDevices = Boolean(devices && devices.length);
-  }
+  // onCamerasFound(devices: MediaDeviceInfo[]): void {
+  //   this.availableDevices = devices;
+  //   this.hasDevices = Boolean(devices && devices.length);
+  // }
 
   onCodeResult(resultString: string) {
     this.qrResultString = resultString;
   }
 
-  onDeviceSelectChange(selected: string) {
-    const device = this.availableDevices.find(x => x.deviceId === selected);
-    this.currentDevice = device || null;
-  }
+  // onDeviceSelectChange(selected: string) {
+  //   const device = this.availableDevices.find(x => x.deviceId === selected);
+  //   this.currentDevice = device || null;
+  // }
 
   // openFormatsDialog() {
   //   const data = {
@@ -64,9 +66,9 @@ export class AppComponent {
   //     .subscribe(x => { if (x) { this.formatsEnabled = x; } });
   // }
 
-  onHasPermission(has: boolean) {
-    this.hasPermission = has;
-  }
+  // onHasPermission(has: boolean) {
+  //   this.hasPermission = has;
+  // }
 
   // openInfoDialog() {
   //   const data = {
