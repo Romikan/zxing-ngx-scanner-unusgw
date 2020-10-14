@@ -1,6 +1,6 @@
 <!-- <div > -->
 
-  <!-- <mat-menu #appMenu="matMenu">
+<!-- <mat-menu #appMenu="matMenu">
     <mat-selection-list>
       <mat-list-option checkboxPosition="start" (click)="toggleTryHarder()" [selected]="tryHarder">
         Enable Try-harder
@@ -16,7 +16,7 @@
   </mat-menu> -->
 
 
-  <!-- <header>
+<!-- <header>
     <mat-form-field appearance="fill">
       <select matNativeControl matInput (change)="onDeviceSelectChange($event.target.value)">
 
@@ -33,26 +33,22 @@
   (permissionResponse)="onHasPermission($event)"
   (camerasFound)="onCamerasFound($event)"  -->
 
-  <zxing-scanner 
-  
-  [enable]="scannerEnabled"
-  [formats]="formatsEnabled" 
-  (scanSuccess)="onCodeResult($event)"
+<zxing-scanner 
+[formats]="formatsEnabled" 
+(scanSuccess)="onCodeResult($event)">
+</zxing-scanner>
 
-  >
-  </zxing-scanner>
-
-<div class="scanbutton"> 
+<!-- <div class="scanbutton"> 
   <button  primary mat-raised-button color="primary" (click)="onScan()">Scanner An</button><br><br>
   <button  primary mat-raised-button color="primary" (click)="offScan()">Scanner Aus</button>
-</div>
+</div> -->
 
 
-  <h2>Ergebnis</h2>
-  <h3>{{ qrResultString }}</h3>
+<h2>Ergebnis</h2>
+<h3>{{ qrResultString }}</h3>
 
- 
-  <!-- <section class="results" *ngIf="qrResultString">
+
+<!-- <section class="results" *ngIf="qrResultString">
     <div>
       <small>Ergebnis</small>
       <strong>{{ qrResultString }}</strong>

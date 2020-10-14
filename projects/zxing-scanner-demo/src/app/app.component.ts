@@ -10,10 +10,9 @@ import { AppInfoDialogComponent } from './app-info-dialog/app-info-dialog.compon
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
-  // availableDevices: MediaDeviceInfo[];
-  // currentDevice: MediaDeviceInfo = null;
+export class AppComponent {
+  availableDevices: MediaDeviceInfo[];
+  currentDevice: MediaDeviceInfo = null;
 
   formatsEnabled: BarcodeFormat[] = [
     BarcodeFormat.CODE_128,
@@ -24,9 +23,7 @@ export class AppComponent implements OnInit {
 
   // hasDevices: boolean;
   // hasPermission: boolean;
-  scannerEnabled: boolean;
-  result: boolean;
-  
+  // scannerEnabled: boolean;
 
   qrResultString: string;
 
@@ -34,23 +31,19 @@ export class AppComponent implements OnInit {
   // torchAvailable$ = new BehaviorSubject<boolean>(false);
   // tryHarder = false;
 
-
-// private readonly _dialog: MatDialog
+  // private readonly _dialog: MatDialog
   constructor() {
-    this.scannerEnabled = false;
-    this.result = false;
-   }
+    // this.scannerEnabled = false;
+  }
 
-  //  OnInit(){
- 
-  //  }
-  //  onScan(){
-  //     this.scannerEnabled = true;
-  //   }
-  //   offScan(){
-  //     this.scannerEnabled = false;
-  //   }
+  //  OnInit(){}
 
+  // onScan() {
+  //   this.scannerEnabled = true;
+  // }
+  // offScan() {
+  //   this.scannerEnabled = false;
+  // }
 
   // clearResult(): void {
   //   this.qrResultString = null;
@@ -61,12 +54,9 @@ export class AppComponent implements OnInit {
   //   this.hasDevices = Boolean(devices && devices.length);
   // }
 
-  // onCodeResult(resultString: string) {
-  //   this.qrResultString = resultString;
-  //   if(this.result == true){
-  //   this.scannerEnabled = false;
-  //   }
-  // }
+  onCodeResult(resultString: string) {
+    this.qrResultString = resultString;
+  }
 
   // onDeviceSelectChange(selected: string) {
   //   const device = this.availableDevices.find(x => x.deviceId === selected);
@@ -97,7 +87,6 @@ export class AppComponent implements OnInit {
   //   this._dialog.open(AppInfoDialogComponent, { data });
   // }
 
- 
   // toggleTryHarder(): void {
   //   this.tryHarder = !this.tryHarder;
   // }
