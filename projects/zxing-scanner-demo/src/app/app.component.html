@@ -33,9 +33,8 @@
   (permissionResponse)="onHasPermission($event)"
   (camerasFound)="onCamerasFound($event)"  -->
 
-<zxing-scanner 
-[formats]="formatsEnabled" 
-(scanSuccess)="onCodeResult($event)">
+<zxing-scanner [formats]="formatsEnabled" (scanSuccess)="onCodeResult($event)">
+
 </zxing-scanner>
 
 <!-- <div class="scanbutton"> 
@@ -70,7 +69,7 @@
 
 <ng-container *ngIf="hasPermission === false">
 
-  <h2>You denied the camera permission, we can't scan anything without it. 😪</h2>
+  <h2>You denied the camera permission, we can't scan anything without it.</h2>
 
 </ng-container>
 -->
