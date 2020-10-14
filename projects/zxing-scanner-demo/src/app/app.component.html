@@ -49,7 +49,9 @@
 <h2>Ergebnis</h2>
 <h3>{{ qrResultString }}</h3>
 
-<button mat-menu-item (click)="openInfoDialog()">App info</button>
+<button primary mat-raised-button color="secondary" (click)="openInfoDialog()">
+  App info
+</button>
 
 <!-- <section class="results" *ngIf="qrResultString">
     <div>
