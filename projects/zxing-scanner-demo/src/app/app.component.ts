@@ -21,9 +21,8 @@ export class AppComponent {
     BarcodeFormat.ITF
   ];
 
-  // hasDevices: boolean;
-  // hasPermission: boolean;
-  // scannerEnabled: boolean;
+  hasDevices: boolean;
+  hasPermission: boolean;
 
   qrResultString: string;
 
@@ -32,27 +31,18 @@ export class AppComponent {
   // tryHarder = false;
 
   // private readonly _dialog: MatDialog
-  constructor() {
-    // this.scannerEnabled = false;
-  }
+  constructor(private readonly _dialog: MatDialog) {}
 
   //  OnInit(){}
-
-  // onScan() {
-  //   this.scannerEnabled = true;
-  // }
-  // offScan() {
-  //   this.scannerEnabled = false;
-  // }
 
   // clearResult(): void {
   //   this.qrResultString = null;
   // }
 
-  // onCamerasFound(devices: MediaDeviceInfo[]): void {
-  //   this.availableDevices = devices;
-  //   this.hasDevices = Boolean(devices && devices.length);
-  // }
+  onCamerasFound(devices: MediaDeviceInfo[]): void {
+    this.availableDevices = devices;
+    this.hasDevices = Boolean(devices && devices.length);
+  }
 
   onCodeResult(resultString: string) {
     this.qrResultString = resultString;
@@ -74,18 +64,18 @@ export class AppComponent {
   //     .subscribe(x => { if (x) { this.formatsEnabled = x; } });
   // }
 
-  // onHasPermission(has: boolean) {
-  //   this.hasPermission = has;
-  // }
+  onHasPermission(has: boolean) {
+    this.hasPermission = has;
+  }
 
-  // openInfoDialog() {
-  //   const data = {
-  //     hasDevices: this.hasDevices,
-  //     hasPermission: this.hasPermission,
-  //   };
+  openInfoDialog() {
+    const data = {
+      hasDevices: this.hasDevices,
+      hasPermission: this.hasPermission
+    };
 
-  //   this._dialog.open(AppInfoDialogComponent, { data });
-  // }
+    this._dialog.open(AppInfoDialogComponent, { data });
+  }
 
   // toggleTryHarder(): void {
   //   this.tryHarder = !this.tryHarder;

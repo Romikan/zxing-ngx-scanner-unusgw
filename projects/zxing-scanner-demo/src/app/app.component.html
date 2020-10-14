@@ -15,7 +15,6 @@
     <button mat-menu-item (click)="openInfoDialog()">App info</button>
   </mat-menu> -->
 
-
 <!-- <header>
     <mat-form-field appearance="fill">
       <select matNativeControl matInput (change)="onDeviceSelectChange($event.target.value)">
@@ -33,8 +32,13 @@
   (permissionResponse)="onHasPermission($event)"
   (camerasFound)="onCamerasFound($event)"  -->
 
-<zxing-scanner [formats]="formatsEnabled" (scanSuccess)="onCodeResult($event)">
-
+<zxing-scanner
+  [(device)]="currentDevice"
+  (permissionResponse)="onHasPermission($event)"
+  (camerasFound)="onCamerasFound($event)"
+  [formats]="formatsEnabled"
+  (scanSuccess)="onCodeResult($event)"
+>
 </zxing-scanner>
 
 <!-- <div class="scanbutton"> 
@@ -42,10 +46,10 @@
   <button  primary mat-raised-button color="primary" (click)="offScan()">Scanner Aus</button>
 </div> -->
 
-
 <h2>Ergebnis</h2>
 <h3>{{ qrResultString }}</h3>
 
+<button mat-menu-item (click)="openInfoDialog()">App info</button>
 
 <!-- <section class="results" *ngIf="qrResultString">
     <div>
