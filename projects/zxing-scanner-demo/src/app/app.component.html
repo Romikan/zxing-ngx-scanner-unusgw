@@ -32,13 +32,8 @@
   (permissionResponse)="onHasPermission($event)"
   (camerasFound)="onCamerasFound($event)"  -->
 
-<zxing-scanner
-  [(device)]="currentDevice"
-  (permissionResponse)="onHasPermission($event)"
-  (camerasFound)="onCamerasFound($event)"
-  [formats]="formatsEnabled"
-  (scanSuccess)="onCodeResult($event)"
->
+<zxing-scanner [(device)]="currentDevice" (permissionResponse)="onHasPermission($event)"
+	(camerasFound)="onCamerasFound($event)" [formats]="formatsEnabled" (scanSuccess)="onCodeResult($event)">
 </zxing-scanner>
 
 <!-- <div class="scanbutton"> 
@@ -49,7 +44,7 @@
 <h2>Ergebnis</h2>
 <h3>{{ qrResultString }}</h3>
 
-<button primary mat-raised-button color="secondary" (click)="openInfoDialog()">
+<button mat-raised-button color="primary" (click)="openInfoDialog()">
   App info
 </button>
 
